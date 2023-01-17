@@ -11,6 +11,12 @@ A crowfunding based charity system which uses underlying blockchain technology t
 
 ## Installation
 
+Install the dependicies before starting the development server
+
+```sh
+npm i --yes
+```
+
 To start the dev server
 
 ```sh
