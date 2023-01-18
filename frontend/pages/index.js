@@ -1,5 +1,3 @@
-
-import styles from "../styles/Home.module.css";
 import React, { useEffect } from "react";
 
 export default function Home() {
@@ -19,8 +17,7 @@ export default function Home() {
 
     //Connect Account Function
     async function connectAccount() {
-      // try{
-      //   const {ethereum}=window;
+      try{
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
@@ -37,7 +34,7 @@ export default function Home() {
       const displayAccount= document.getElementById("displayAccount");
       displayAccount.innerHTML= accounts[0];
 
-      // connectButton.innerHTML =
+      // displayAccount.innerHTML =
       //   account[0] +
       //   account[1] +
       //   account[2] +
@@ -49,18 +46,24 @@ export default function Home() {
       //   account[39] +
       //   account[40] +
       //   account[41];
+
+      } catch(error){
+        console.log(`Error from Next is:- ${error}`)
+      }
     }
-  
   }, []);
 
   return (
     <div>
       <div style={{
         background:"skyblue",
-        // alignItems:"center",
+       
         
         padding:"20px"
-      }}>
+      }}
+      >
+        <div id="displayAccount">
+      {/* // id="displayAccount" */}
           <button 
             id="connect" 
             style={{
@@ -75,9 +78,8 @@ export default function Home() {
             }}>
             Connect Wallet
           </button>
+          </div>
       </div>
-      <div id="displayAccount"></div>
-      ACCOUNT ADDRESS CORRECT TARIKA MA DEKHAKO XAINA
     </div>
   );
 }
