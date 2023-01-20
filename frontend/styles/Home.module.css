@@ -21,6 +21,8 @@
   align-items: center;
 }
 
+
+
 .footer a {
   display: flex;
   justify-content: center;
@@ -127,3 +129,5 @@
     filter: invert(1);
   }
 }
+
+
